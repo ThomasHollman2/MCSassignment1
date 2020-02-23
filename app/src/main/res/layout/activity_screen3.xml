@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/black"
+    tools:context=".Screen3">
+
+    <DatePicker
+        android:id="@+id/calendar"
+        android:layout_width="wrap_content"
+        android:layout_height="400dp"
+        android:background="@android:color/white"
+        android:translationZ="500dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+        <Button
+            android:id="@+id/exitbutton"
+            android:layout_width="50dp"
+            android:layout_height="25dp"
+            android:text="Exit"
+            android:background="@android:color/white"
+            android:translationZ="1000dp"
+
+
+            android:layout_marginLeft="280dp"
+            android:layout_marginTop="25dp"
+            />
+"
+    </DatePicker>
+
+
+
+    <ImageView
+        android:id="@+id/icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@mipmap/androidicon_foreground" />
+
+    <EditText
+        android:id="@+id/name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginRight="32dp"
+        android:background="@android:color/white"
+        android:hint="Name"
+        android:padding="8dp"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toStartOf="@+id/icon"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/icon" />
+
+    <EditText
+        android:id="@+id/username"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="32dp"
+        android:background="@android:color/white"
+        android:hint="Username"
+        android:padding="8dp"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toStartOf="@+id/icon"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/name" />
+
+    <EditText
+        android:id="@+id/password"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="32dp"
+        android:background="@android:color/white"
+        android:hint="Password"
+        android:padding="8dp"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toStartOf="@+id/icon"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/username" />
+
+    <Button
+        android:id="@+id/changePhoto"
+        android:layout_width="0dp"
+        android:layout_height="45dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="32dp"
+        android:background="@drawable/gradient_button_background"
+        android:text="Change Photo"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toStartOf="@id/icon"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/password" />
+
+    <TextView
+        android:id="@+id/age"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="32dp"
+        android:background="@android:color/white"
+        android:hint="Age"
+        android:padding="8dp"
+        android:textSize="24sp"
+
+        app:layout_constraintEnd_toStartOf="@+id/icon"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/changePhoto" />
+
+    <Button
+        android:id="@+id/button_birthdate"
+        android:layout_width="0dp"
+        android:layout_height="45dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="120dp"
+        android:background="@android:color/white"
+        android:text="Choose Birth Date"
+        android:textSize="12dp"
+        app:layout_constraintEnd_toStartOf="@id/icon"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/age" />
+
+    <TextView
+        android:id="@+id/birthdate"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="32dp"
+        android:background="@android:color/white"
+        android:padding="12dp"
+        android:text="Not-Specified"
+        android:textColor="@android:color/black"
+        android:textSize="16sp"
+
+        app:layout_constraintEnd_toStartOf="@+id/icon"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_birthdate" />
+
+    <RadioGroup
+        android:id="@+id/genderbuttons"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="32dp"
+        app:layout_constraintEnd_toEndOf="@id/birthdate"
+        app:layout_constraintStart_toStartOf="@id/birthdate"
+        app:layout_constraintTop_toBottomOf="@+id/birthdate">
+
+        <TextView
+            android:id="@+id/gender"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Gender"
+            android:textColor="@android:color/white"
+            android:textSize="16sp" />
+
+        <RadioButton
+            android:id="@+id/buttonFemale"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/black"
+            android:buttonTint="@android:color/white"
+            android:text="Female"
+            android:textColor="@android:color/white" />
+
+        <RadioButton
+            android:id="@+id/buttonMale"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/black"
+            android:buttonTint="@android:color/white"
+            android:text="Male"
+            android:textColor="@android:color/white" />
+
+        <RadioButton
+            android:id="@+id/buttonNS"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/black"
+            android:buttonTint="@android:color/white"
+            android:text="Not Specified"
+            android:textColor="@android:color/white" />
+
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/postal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="32dp"
+        android:background="@android:color/white"
+        android:hint="Postal Address (opt)"
+        android:padding="8dp"
+        android:textSize="16sp"
+
+        app:layout_constraintEnd_toStartOf="@+id/icon"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/genderbuttons" />
+
+    <Button
+        android:id="@+id/save"
+        android:layout_width="0dp"
+        android:layout_height="30dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="16dp"
+        android:background="@drawable/gradient_button_background"
+        android:text="Save"
+        android:textSize="12dp"
+        app:layout_constraintBottom_toBottomOf="@id/postal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/postal"
+        app:layout_constraintTop_toBottomOf="@+id/genderbuttons" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
