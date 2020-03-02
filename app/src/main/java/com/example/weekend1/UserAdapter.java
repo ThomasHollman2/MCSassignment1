@@ -11,14 +11,11 @@ import java.util.List;
 
 public class UserAdapter extends RecyclerView.Adapter<DataViewHolder> {
 
-    private listOfUsers listOfUsers;
+
     private List<UserData> dataSet;
 
-    public UserAdapter(listOfUsers listOfUsers) {
-        this.listOfUsers = listOfUsers;
 
 
-    }
 
     public void setDataSet(List<UserData> dataSet) {
         this.dataSet = dataSet;

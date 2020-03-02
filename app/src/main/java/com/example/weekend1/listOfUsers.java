@@ -9,6 +9,9 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.util.Log;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class listOfUsers extends AppCompatActivity {
 
     private static final String TAG = "listOfUsers";
@@ -20,8 +23,11 @@ public class listOfUsers extends AppCompatActivity {
         setContentView(R.layout.activity_list_of_users);
         recyclerView = findViewById(R.id.recycler_view);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        UserAdapter adapter = new UserAdapter(this);
-        recyclerView.setAdapter(adapter);
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         queryData();
 
     }
@@ -29,7 +35,8 @@ public class listOfUsers extends AppCompatActivity {
     public void queryData() {
         UserDatabase dataBase = new UserDatabase(this);
         SQLiteDatabase readable = dataBase.getReadableDatabase();
-
+        UserAdapter adapter = new UserAdapter();
+        recyclerView.setAdapter(adapter);
         String[] columns = {UserTable.USER_NAME,
                 UserTable.USER_COUNTRY,
                 UserTable.USER_GENDER,
@@ -45,16 +52,31 @@ public class listOfUsers extends AppCompatActivity {
                 null,
                 null
         );
-        while (cursor.moveToNext()) {
+        cursor.moveToFirst();
+        List<UserData> data = new ArrayList<>();
+        do {
+
             String name = cursor.getString(cursor.getColumnIndex(UserTable.USER_NAME));
             String country = cursor.getString(cursor.getColumnIndex(UserTable.USER_COUNTRY));
             String gender = cursor.getString(cursor.getColumnIndex(UserTable.USER_GENDER));
             String date = cursor.getString(cursor.getColumnIndex(UserTable.USER_DOB));
 
+            UserData userInfo = new UserData();
+            userInfo.UserName = name;
+            userInfo.UserCountry = country;
+            userInfo.UserGender = gender;
+            userInfo.UserDate = date;
 
-
+            data.add(userInfo);
             Log.d(TAG, "Name: "+name+" Country: "+country+" Gender: "+gender+" Date of Birth: "+date);
 
-        }
+            adapter.setDataSet(data);
+        }while (cursor.moveToNext());
+            cursor.close();
+
+
+
+
+
     }
 }

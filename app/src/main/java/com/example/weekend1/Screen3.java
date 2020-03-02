@@ -58,7 +58,7 @@ public class Screen3 extends AppCompatActivity {
                 String day = date.getDayOfMonth() + "/";
                 String month = date.getMonth() + 1 + "/";
                 String year = " " + date.getYear();
-                birthdate.setText(month + day + year);
+                birthdate.setText(String.format("%s%s%s", month, day, year));
                 String ages = String.valueOf(2020 - date.getYear());
                 age.setText(ages + " years old");
 
@@ -134,10 +134,10 @@ public class Screen3 extends AppCompatActivity {
             contentValues.put(UserTable.USER_GENDER, gender);
             contentValues.put(UserTable.USER_DOB, date);
 
-            writable.insert(   UserTable.TABLE_NAME,
-                    null,contentValues
+       
+       
 
-            )  ;
+       
             long row = writable.insert(UserTable.TABLE_NAME,
                     null,
                     contentValues);
